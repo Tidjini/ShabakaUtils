@@ -15,7 +15,7 @@ public class ApiService {
 
 
 
-    private ApiService(IApiInterface apiInterface, String baseUrl) {
+    private ApiService(String baseUrl) {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl)
@@ -28,11 +28,11 @@ public class ApiService {
         apiInterface = retrofit.create(IApiInterface.class);
     }
 
-    public static ApiService getInstance(IApiInterface apiInterface, String baseUrl) {
-        if(INSTANCE == null) INSTANCE = new ApiService(apiInterface, baseUrl);
+    public static ApiService getInstance(String baseUrl) {
+        if(INSTANCE == null) INSTANCE = new ApiService(baseUrl);
         return INSTANCE;
     }
-        public IApiInterface getApiInterface() {
+    public IApiInterface getApiInterface() {
         return apiInterface;
     }
 }
