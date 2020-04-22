@@ -20,7 +20,4 @@ public class Verificators {
     }
 
 
-    public static boolean isMapServicesOk(){
-        GoogleApiAvailability.getInsatance();
-    }
 }
